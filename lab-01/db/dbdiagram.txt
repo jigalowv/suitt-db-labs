@@ -1,0 +1,105 @@
+Enum order_status {
+  new
+  in_progress
+  completed
+  cancelled
+}
+
+Enum request_status {
+  pending
+  viewed
+  accepted
+  rejected
+}
+
+Enum comment_type {
+  positive
+  negative
+  neutral
+}
+
+Table member {
+  m_id uuid [pk]
+  m_login varchar(255)
+  m_email varchar(255)
+  m_phc varchar(255)
+  m_registration_dt timestamp
+}
+
+Table contact_type {
+  ct_id serial [pk]
+  ct_title varchar(255)
+}
+
+Table contact {
+  c_id uuid [pk]
+  member_id uuid [ref: > member.m_id]
+  contact_type_id int [ref: > contact_type.ct_id]
+  c_value varchar(255)
+}
+
+Table performer {
+  member_id uuid [pk, ref: - member.m_id]
+  expected_income_id bigint [ref: - income_range.ir_id]
+  p_experience int
+  p_resume text
+  p_promoted_at timestamp
+}
+
+Table income_range {
+  ir_id bigserial [pk]
+  ir_min decimal(12,2)
+  ir_max decimal(12,2)
+}
+
+Table skill {
+  s_id serial [pk]
+  s_title varchar(255)
+}
+
+Table performer_skill {
+  ps_id bigserial [pk]
+  performer_id uuid [ref: > performer.member_id]
+  skill_id int [ref: > skill.s_id]
+}
+
+Table customer {
+  member_id uuid [pk, ref: - member.m_id]
+}
+
+Table required_skill {
+  rs_id bigserial [pk]
+  order_id int [ref: > order.o_id]
+  skill_id int [ref: > skill.s_id]
+}
+
+Table order {
+  o_id bigserial [pk]
+  customer_id uuid [ref: > customer.member_id]
+  income_range_id bigint [ref: > income_range.ir_id]
+  o_title varchar(255)
+  o_description text
+  o_status order_status
+  o_created_at timestamp
+  o_updated_at timestamp
+  o_deadline timestamp
+  o_promoted_at timestamp
+}
+
+Table perform_request {
+  pr_id bigserial [pk]
+  order_id bigint [ref: > order.o_id]
+  performer_id uuid [ref: > performer.member_id]
+  pr_created_at timestamp
+  pr_status request_status
+}
+
+Table comment {
+  c_id bigserial [pk]
+  finished_order_id bigint [ref: > order.o_id]
+  c_from uuid [ref: > member.m_id]
+  c_to uuid [ref: > member.m_id] 
+  c_content text
+  c_created_at timestamp
+  c_type comment_type
+}
