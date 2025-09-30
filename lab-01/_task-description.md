@@ -12,3 +12,10 @@
 7. Оформить протокол
 
 посилання на литературу: https://drive.google.com/drive/folders/1EaoyoNBsOWTmPQUNSXGYKqOXBFOqpmGs?usp=sharing
+
+### Ссылки:
+1. [бизнес требования](./business-requirements.md)
+2. [нормализация](./normalization.md)
+3. [формализация связей](./relations-formalization.md)
+- [диаграмма базы данных (png)](./db/dbdiagram.png)
+- [диаграмма базы данных (txt)](./db/dbdiagram.txt)
