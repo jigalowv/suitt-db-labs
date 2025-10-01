@@ -76,7 +76,7 @@
             <td>первинний ключ<br/>FK → member.m_id<br/>не порожній</td>
         </tr>
         <tr>
-        <th colspan="3">order (завдання)</th></tr>
+        <th colspan="3">customer_order (завдання)</th></tr>
         <tr>
             <td>o_id</td>
             <td>Ідентифікатор завдання</td>
@@ -147,16 +147,16 @@
             <td>первинний ключ</td>
         </tr>
         <tr>
-            <td>order_id</td>
+            <td>customer_order_id</td>
             <td>Завдання</td>
-            <td>FK → order.o_id.<br/>не порожній</td>
+            <td>FK → customer_order.o_id.<br/>не порожній</td>
         </tr>
         <tr>
             <td>skill_id</td>
             <td>Навичка</td>
             <td>FK → skill.s_id.<br/>не порожній</td>
         </tr>
-        <td colspan='3'>(order_id, skill_id) - <b>unique</b></td>
+        <td colspan='3'>(customer_order_id, skill_id) - <b>unique</b></td>
         <tr>
         <th colspan="3">performer_skill (навичка виконавця)</th></tr>
         <tr>
@@ -233,9 +233,9 @@
             <td>первинний ключ</td>
         </tr>
         <tr>
-            <td>order_id</td>
+            <td>customer_order_id</td>
             <td>Завдання</td>
-            <td>FK → order.o_id.<br/>не порожній</td>
+            <td>FK → customer_order.o_id.<br/>не порожній</td>
         </tr>
         <tr>
             <td>performer_id</td>
@@ -253,7 +253,7 @@
             <td>request_status.<br/>не порожній</td>
         </tr>
         <tr>
-            <td colspan='3'>(order_id, performer_id) - <b>unique</b></td>
+            <td colspan='3'>(customer_order_id, performer_id) - <b>unique</b></td>
         </tr>
         <tr>
         <th colspan="3">comment (коментар)</th></tr>
@@ -263,9 +263,9 @@
             <td>первинний ключ</td>
         </tr>
         <tr>
-            <td>finished_order_id</td>
+            <td>finished_customer_order_id</td>
             <td>Завершене завдання</td>
-            <td>FK → order.o_id.<br/>не порожній</td>
+            <td>FK → customer_order.o_id.<br/>не порожній</td>
         </tr>
         <tr>
             <td>c_from</td>
