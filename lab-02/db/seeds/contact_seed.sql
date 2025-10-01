@@ -1,0 +1,16 @@
+INSERT INTO contact (member_id, contact_type_id, c_value) VALUES
+    ('35bf6976-0f6c-45fc-a25a-95625e48c0fe', '9', '@example_user_01'),
+    ('c2eb92b8-e846-4a6e-bda6-b6d86e880009', '9', '@example_user_02'),
+    ('ad138dc5-1bc5-402b-8df3-142f29d96ba1', '9', '@example_user_03'),
+    ('15e8be4f-b670-49c9-b9b2-194bbf131724', '9', '@example_user_04'),
+    ('814ce475-def5-4b92-9405-e2abd00fa7ad', '9', '@example_user_05'),
+    ('3d3ead93-a174-486f-84fe-ee2240466c09', '9', '@example_user_06'),
+    ('1af2a42a-0422-4977-a2e5-e30dee500662', '9', '@example_user_07'),
+    ('a402cb77-c25a-4d4a-beb5-d744d43d1e72', '9', '@example_user_08'),
+    ('7ba94262-ea1e-45a2-9bcf-44eb2c65b3fb', '9', '@example_user_09'),
+    ('3e3417b7-8fee-4bb4-b7c6-1079db01ee98', '9', '@example_user_10'),
+    ('3f002a16-2711-45c7-9a1f-ba24a6433be0', '9', '@example_user_11'),
+    ('27a827d5-b5a6-401f-90c6-9f1b22e0cc26', '9', '@example_user_12'),
+    ('85b39332-2f3a-4b1e-87e7-a608c6e4dca6', '9', '@example_user_13'),
+    ('10faadf5-5b50-46e9-b599-8844ef29d693', '9', '@example_user_14'),
+    ('8a2c696d-32ba-4c9c-a1f3-434876265657', '9', '@example_user_15');
